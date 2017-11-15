@@ -1,0 +1,18 @@
+<?php
+	$link = mysqli_connect("localhost","root","sql","boo::::::::::::::::::;;;king3233a66c");
+	if(mysqli_connect_error())
+	{
+		die("There is some error in connecting to database");
+	}
+	
+	$roomno = $_POST['room'];
+	$person = $_POST['person'];
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$contactno = $_POST['contact'];
+	$query = "INSERT INTO `booking`(`roomno`,`name`,`person`,`email`,`contactno`) VALUES('$roomno','$name','$person','$email','$contactno')";
+	if(!mysqli_query($link,$query))
+		echo mysqli_errno($link);
+	echo $name1;
+	mysqli_close($link);
+?>
